@@ -9,6 +9,10 @@ import Lomiri.Components.Popups 1.3
 Item {
     signal listUpdated()
     signal noActionableTabReady(var reference)
+
+    property Item headerReference
+    property var totalHeaderHeight: headerReference.height + headerReference.extension.height
+
     Connections {
         target: root 
         onItemMovedToNoActionable: {
@@ -41,10 +45,11 @@ Item {
     LomiriListView {
         id: listNoActionable
         width: parent.width
-        height: units.gu(100)
+        height: units.gu(30)
         anchors {
             margins: units.gu(2)
-            top: parent.topMargin
+            //top: headerReference.bottom
+            topMargin: totalHeaderHeight
             left: parent.left
             right: parent.right
             bottom: parent.bottom

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtd.molinakevin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 13:44+0000\n"
+"POT-Creation-Date: 2023-12-06 14:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/ActionableTab.qml:186 ../qml/InboxTab.qml:192
-#: ../qml/NoActionableTab.qml:167
+#: ../qml/ActionableTab.qml:190 ../qml/InboxTab.qml:198
+#: ../qml/NoActionableTab.qml:172
 msgid ""
 "Quieres eliminar completamente esta entrada?\n"
 " Ten en cuenta que sera eliminada de forma permanente"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:222 ../qml/InboxTab.qml:232
-#: ../qml/NoActionableTab.qml:203
+#: ../qml/ActionableTab.qml:226 ../qml/InboxTab.qml:238
+#: ../qml/NoActionableTab.qml:208
 msgid "Convertir Thing en un no actionable?"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:257 ../qml/InboxTab.qml:298
-#: ../qml/NoActionableTab.qml:238
+#: ../qml/ActionableTab.qml:261 ../qml/InboxTab.qml:304
+#: ../qml/NoActionableTab.qml:243
 msgid "Convertir Thing en un actionable?"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Fecha"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:56 ../qml/InboxTab.qml:239
+#: ../qml/AddItemPage.qml:56 ../qml/InboxTab.qml:245
 msgid "Detalles"
 msgstr ""
 
@@ -66,10 +66,10 @@ msgstr ""
 msgid "Getting Things Done"
 msgstr ""
 
-#: ../qml/InboxTab.qml:245
+#: ../qml/InboxTab.qml:251
 msgid "Fecha de revisión"
 msgstr ""
 
-#: ../qml/InboxTab.qml:251
+#: ../qml/InboxTab.qml:257
 msgid "Categoría"
 msgstr ""

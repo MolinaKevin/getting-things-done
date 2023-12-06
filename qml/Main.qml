@@ -57,14 +57,17 @@ MainView {
             HeaderComponent {
                 id: header
             }
-            StackLayout {
 
+            StackLayout {
                 id: stackLayout
                 anchors.fill: parent
                 anchors.top: header.bottom
 
-                ActionableTab {}
+                ActionableTab {
+                    headerReference: header
+                }
                 InboxTab {
+                    headerReference: header
                     onInboxTabReady: {
                         currentInboxTab = reference;
                     }
@@ -72,7 +75,9 @@ MainView {
                         updateList();
                     }
                 }
-                NoActionableTab {}
+                NoActionableTab {
+                    headerReference: header
+                }
             }
         }
     }

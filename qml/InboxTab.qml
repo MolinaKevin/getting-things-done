@@ -9,6 +9,9 @@ Item {
     signal listUpdated()
     signal inboxTabReady(var reference)
 
+    property Item headerReference
+    property var totalHeaderHeight: headerReference.height + headerReference.extension.height
+
     function updateList() {
         var data = databaseService.loadInbox(); 
         listModel.clear(); 
@@ -44,14 +47,16 @@ Item {
     LomiriListView {
         id: listInbox
         width: parent.width
-        height: units.gu(100)
+        height: units.gu(30)
         anchors {
             margins: units.gu(2)
-            top: parent.top + units.gu(5)
+            //top: headerReference.bottom
+            topMargin: totalHeaderHeight
             left: parent.left
             right: parent.right
             bottom: parent.bottom
         }
+
 
         model: ListModel {
             id: listModel
@@ -174,6 +179,7 @@ Item {
         }
 
         Component.onCompleted: {
+            //listInbox.anchors.top = header.bottom
             var data = databaseService.loadInbox();
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i].name);
