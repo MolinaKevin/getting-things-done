@@ -15,6 +15,7 @@ set(PROJECT_NAME "gtd")
 set(FULL_PROJECT_NAME "gtd.molinakevin")
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
+set(ICON assets/logo.svg)
 
 # This command figures out the minimum SDK framework for use in the manifest
 # file via the environment variable provided by Clickable or sets a default value otherwise.

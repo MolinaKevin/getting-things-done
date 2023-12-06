@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtd.molinakevin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 15:29+0000\n"
+"POT-Creation-Date: 2023-12-06 19:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,32 +34,44 @@ msgstr ""
 msgid "Convertir Thing en un actionable?"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:39
+#: ../qml/AddItemPage.qml:43
 msgid "Titulo"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:47
+#: ../qml/AddItemPage.qml:51
 msgid "Fecha"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:56 ../qml/InboxTab.qml:245
+#: ../qml/AddItemPage.qml:80
+msgid "Confirmar"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:90 ../qml/AddItemPage.qml:146
+msgid "Cancelar"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:101 ../qml/InboxTab.qml:245
 msgid "Detalles"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:63
+#: ../qml/AddItemPage.qml:108
 msgid "Fuente (Source)"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:70
+#: ../qml/AddItemPage.qml:115
 msgid "Tags"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:77
+#: ../qml/AddItemPage.qml:122
 msgid "Estado"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:84
+#: ../qml/AddItemPage.qml:129
 msgid "Prioridad"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:135
+msgid "Agregar"
 msgstr ""
 
 #: ../qml/HeaderComponent.qml:6 gtd.desktop.in.h:1

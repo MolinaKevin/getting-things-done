@@ -8,6 +8,46 @@ QtObject {
         return LocalStorage.openDatabaseSync("GTD", "1.0", "StorageDatabase", 1000000);
     }
 
+   function checkDBVersion() {
+        var db = getDatabase();
+        var version = 0; 
+
+        db.transaction(function(tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS DBVersion (version INTEGER)');
+        });
+
+        db.transaction(function(tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS DBVersion (version INTEGER)');
+            var result = tx.executeSql('SELECT version FROM DBVersion');
+            if (result.rows.length === 0) {
+                tx.executeSql('INSERT INTO DBVersion (version) VALUES (?)', [1]);
+            }
+        });
+
+        db.transaction(function(tx) {
+            var rs = tx.executeSql('SELECT version FROM DBVersion');
+            if (rs.rows.length > 0) {
+                version = rs.rows.item(0).version;
+                console.log("Versión actual de la base de datos:", version);
+
+                if (version === 0) {
+                    console.log("Version es 0, eliminando bases de datos antiguas y estableciendo versión a 1");
+
+                    tx.executeSql('DROP TABLE IF EXISTS GtdInbox');
+                    tx.executeSql('DROP TABLE IF EXISTS GtdNoActionable');
+                    tx.executeSql('DROP TABLE IF EXISTS GtdThings');
+
+                    tx.executeSql('UPDATE DBVersion SET version = 1');
+                } else {
+                    console.log("Version de la base de datos:", version);
+                }
+
+            }
+        });
+        initializeDatabases();
+    }
+ 
+
     function initializeDatabases() {
         var db = getDatabase();
         db.transaction(function(tx) {

@@ -40,35 +40,44 @@ MainView {
     }
 
     Component.onCompleted: {
-        databaseService.initializeDatabases();
+        databaseService.checkDBVersion();
     }
 
-    Page {
+    StackView {
+        id: stackView
+        initialItem: initialPage
         anchors.fill: parent
+    }
 
-        HeaderComponent {
-            id: header
-        }
-
-        StackLayout {
-            id: stackLayout
+    Component {
+        id: initialPage
+        Page {
             anchors.fill: parent
-            anchors.top: header.bottom
 
-            ActionableTab {
-                headerReference: header
+            HeaderComponent {
+                id: header
             }
-            InboxTab {
-                headerReference: header
-                onInboxTabReady: {
-                    currentInboxTab = reference;
+
+            StackLayout {
+                id: stackLayout
+                anchors.fill: parent
+                anchors.top: header.bottom
+
+                ActionableTab {
+                    headerReference: header
                 }
-                onListUpdated: {
-                    updateList();
+                InboxTab {
+                    headerReference: header
+                    onInboxTabReady: {
+                        currentInboxTab = reference;
+                    }
+                    onListUpdated: {
+                        updateList();
+                    }
                 }
-            }
-            NoActionableTab {
-                headerReference: header
+                NoActionableTab {
+                    headerReference: header
+                }
             }
         }
     }
@@ -76,7 +85,7 @@ MainView {
     // Botón flotante
     Button {
         id: floatingButton
-        text: "+"
+        text: "+ Inbox"
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: units.gu(4)
