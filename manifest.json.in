@@ -9,7 +9,8 @@
             "desktop":  "gtd.desktop"
         }
     },
-    "version": "1.0.1",
+    "version": "1.0.2",
     "maintainer": "Molina Kevin <molinakevinalejandro@gmail.com>",
-    "framework" : "@CLICK_FRAMEWORK@"
+    "framework" : "@CLICK_FRAMEWORK@",
+    "icon": "assets/icon.png"
 }

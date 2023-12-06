@@ -60,8 +60,8 @@ MainView {
             StackLayout {
 
                 id: stackLayout
-                anchors.top: header.bottom
                 anchors.fill: parent
+                anchors.top: header.bottom
 
                 ActionableTab {}
                 InboxTab {

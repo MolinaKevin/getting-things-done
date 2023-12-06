@@ -47,7 +47,7 @@ Item {
         height: units.gu(100)
         anchors {
             margins: units.gu(2)
-            top: parent.topMargin
+            top: parent.top + units.gu(5)
             left: parent.left
             right: parent.right
             bottom: parent.bottom
