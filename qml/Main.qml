@@ -43,44 +43,36 @@ MainView {
         databaseService.initializeDatabases();
     }
 
-    StackView {
-        id: stackView
-        initialItem: initialPage
+    Page {
         anchors.fill: parent
-    }
 
-    Component {
-        id: initialPage
-        Page {
+        HeaderComponent {
+            id: header
+        }
+
+        StackLayout {
+            id: stackLayout
             anchors.fill: parent
+            anchors.top: header.bottom
 
-            HeaderComponent {
-                id: header
+            ActionableTab {
+                headerReference: header
             }
-
-            StackLayout {
-                id: stackLayout
-                anchors.fill: parent
-                anchors.top: header.bottom
-
-                ActionableTab {
-                    headerReference: header
+            InboxTab {
+                headerReference: header
+                onInboxTabReady: {
+                    currentInboxTab = reference;
                 }
-                InboxTab {
-                    headerReference: header
-                    onInboxTabReady: {
-                        currentInboxTab = reference;
-                    }
-                    onListUpdated: {
-                        updateList();
-                    }
+                onListUpdated: {
+                    updateList();
                 }
-                NoActionableTab {
-                    headerReference: header
-                }
+            }
+            NoActionableTab {
+                headerReference: header
             }
         }
     }
+
     // Botón flotante
     Button {
         id: floatingButton
