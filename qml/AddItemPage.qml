@@ -38,14 +38,14 @@ Page {
             id: titleInput
             placeholderText: i18n.tr("Titulo")
             width: parent.width - 20
-            height: 50
+            height: units.gu(5)
         }
 
         TextField {
             id: dateInput
             width: parent.width - 20
             placeholderText: i18n.tr("Fecha")
-            height: 50
+            height: units.gu(5)
 
             text: Qt.formatDateTime(new Date(), "dd-MM-yyyy HH:mm") 
         }
@@ -54,35 +54,35 @@ Page {
             id: detailsInput 
             width: parent.width - 20
             placeholderText: i18n.tr("Detalles")
-            height: 50
+            height: units.gu(5)
         }
 
         TextField {
             id: sourceInput 
             width: parent.width - 20
             placeholderText: i18n.tr("Fuente (Source)")
-            height: 50
+            height: units.gu(5)
         }
 
         TextField {
             id: tagsInput 
             width: parent.width - 20
             placeholderText: i18n.tr("Tags")
-            height: 50
+            height: units.gu(5)
         }
 
         TextField {
             id: statusInput 
             width: parent.width - 20
             placeholderText: i18n.tr("Estado")
-            height: 50
+            height: units.gu(5)
         }
 
         TextField {
             id: priorityInput
             width: parent.width - 20
             placeholderText: i18n.tr("Prioridad")
-            height: 50
+            height: units.gu(5)
         }
 
         Button {
