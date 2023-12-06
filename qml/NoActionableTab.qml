@@ -48,7 +48,7 @@ Item {
         height: units.gu(30)
         anchors {
             margins: units.gu(2)
-            //top: headerReference.bottom
+            top: parent.top
             topMargin: totalHeaderHeight
             left: parent.left
             right: parent.right
