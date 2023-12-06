@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gtd.molinakevin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gtd.molinakevin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-05 20:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/ActionableTab.qml:186 ../qml/InboxTab.qml:192
+#: ../qml/NoActionableTab.qml:167
+msgid ""
+"Quieres eliminar completamente esta entrada?\n"
+" Ten en cuenta que sera eliminada de forma permanente"
+msgstr ""
+
+#: ../qml/ActionableTab.qml:222 ../qml/InboxTab.qml:232
+#: ../qml/NoActionableTab.qml:203
+msgid "Convertir Thing en un no actionable?"
+msgstr ""
+
+#: ../qml/ActionableTab.qml:257 ../qml/InboxTab.qml:298
+#: ../qml/NoActionableTab.qml:238
+msgid "Convertir Thing en un actionable?"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:39
+msgid "Titulo"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:47
+msgid "Fecha"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:56 ../qml/InboxTab.qml:239
+msgid "Detalles"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:63
+msgid "Fuente (Source)"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:70
+msgid "Tags"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:77
+msgid "Estado"
+msgstr ""
+
+#: ../qml/AddItemPage.qml:84
+msgid "Prioridad"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:6 gtd.desktop.in.h:1
+msgid "Getting Things Done"
+msgstr ""
+
+#: ../qml/InboxTab.qml:245
+msgid "Fecha de revisión"
+msgstr ""
+
+#: ../qml/InboxTab.qml:251
+msgid "Categoría"
+msgstr ""

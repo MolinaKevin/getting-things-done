@@ -1,0 +1,15 @@
+{
+    "name": "gtd.molinakevin",
+    "description": "Getting Things Done App for Ubuntu Touch",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Getting Things Done",
+    "hooks": {
+        "gtd": {
+            "apparmor": "gtd.apparmor",
+            "desktop":  "gtd.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Molina Kevin <molinakevinalejandro@gmail.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
