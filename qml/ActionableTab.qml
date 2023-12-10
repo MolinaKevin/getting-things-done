@@ -84,31 +84,39 @@ Item {
 
                 Text {
                     text: "Fecha de creación: " + model.creationDate
+                    visible: model.creationDate !== undefined && model.creationDate !== ""
                 }
 
                 Text {
                     text: "Detalles: " + model.details
+                    visible: model.details !== undefined && model.details !== ""
                 }
 
                 Text {
                     text: "Fecha de vencimiento: " + model.dueDate
+                    visible: model.dueDate !== undefined && model.dueDate !== ""
                 }
 
                 Text {
                     text: "Estado: " + model.status
+                    visible: model.status !== undefined && model.status !== ""
                 }
 
                 Text {
                     text: "Contexto: " + model.contextName
+                    visible: model.contextName !== undefined && model.contextName !== ""
                 }
 
                 Text {
                     text: "Proyecto: " + model.projectName
+                    visible: model.projectName !== undefined && model.projectName !== ""
                 }
 
                 Text {
                     text: "Tags: " + model.tags
+                    visible: model.tags !== undefined && model.tags !== ""
                 }
+
             }
 
             leadingActions: leadingActionsActionable

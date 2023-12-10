@@ -4,6 +4,7 @@ import Lomiri.Components 1.3
 PageHeader {
     id: header
     title: i18n.tr('Getting Things Done')
+    subtitle: i18n.tr("Swip left or right in items for actions")
 
     extension: Sections {
         width: parent.width

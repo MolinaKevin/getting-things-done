@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtd.molinakevin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-10 05:09+0000\n"
+"POT-Creation-Date: 2023-12-10 18:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/ActionableTab.qml:185 ../qml/ContextTab.qml:137
+#: ../qml/ActionableTab.qml:193 ../qml/ContextTab.qml:137
 #: ../qml/InboxTab.qml:216 ../qml/NoActionableTab.qml:171
 #: ../qml/ProjectTab.qml:141
 msgid ""
@@ -25,12 +25,12 @@ msgid ""
 " Ten en cuenta que sera eliminada de forma permanente"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:221 ../qml/InboxTab.qml:256
+#: ../qml/ActionableTab.qml:229 ../qml/InboxTab.qml:256
 #: ../qml/NoActionableTab.qml:207
 msgid "Convertir Thing en un no actionable?"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:256 ../qml/InboxTab.qml:323
+#: ../qml/ActionableTab.qml:264 ../qml/InboxTab.qml:323
 #: ../qml/NoActionableTab.qml:242
 msgid "Convertir Thing en un actionable?"
 msgstr ""
@@ -75,23 +75,27 @@ msgstr ""
 msgid "Getting Things Done"
 msgstr ""
 
-#: ../qml/HeaderComponent.qml:13
+#: ../qml/HeaderComponent.qml:7
+msgid "Swip left or right in items for actions"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:14
 msgid "Actionable"
 msgstr ""
 
-#: ../qml/HeaderComponent.qml:17
+#: ../qml/HeaderComponent.qml:18
 msgid "Inbox"
 msgstr ""
 
-#: ../qml/HeaderComponent.qml:21
+#: ../qml/HeaderComponent.qml:22
 msgid "No Actionable"
 msgstr ""
 
-#: ../qml/HeaderComponent.qml:25
+#: ../qml/HeaderComponent.qml:26
 msgid "Contextos"
 msgstr ""
 
-#: ../qml/HeaderComponent.qml:29
+#: ../qml/HeaderComponent.qml:30
 msgid "Proyectos"
 msgstr ""
 
