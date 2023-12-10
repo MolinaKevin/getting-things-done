@@ -78,6 +78,12 @@ MainView {
                 NoActionableTab {
                     headerReference: header
                 }
+                ContextTab {
+                    headerReference: header
+                }
+                ProjectTab {
+                    headerReference: header
+                }
             }
         }
     }

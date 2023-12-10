@@ -156,7 +156,6 @@ Item {
         Component.onCompleted: {
             var data = databaseService.loadNoActionable();
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].title);
                 listModel.append(data[i]);
             }
         }

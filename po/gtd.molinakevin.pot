@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtd.molinakevin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 19:48+0000\n"
+"POT-Creation-Date: 2023-12-10 05:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/ActionableTab.qml:190 ../qml/InboxTab.qml:198
-#: ../qml/NoActionableTab.qml:172
+#: ../qml/ActionableTab.qml:185 ../qml/ContextTab.qml:137
+#: ../qml/InboxTab.qml:216 ../qml/NoActionableTab.qml:171
+#: ../qml/ProjectTab.qml:141
 msgid ""
 "Quieres eliminar completamente esta entrada?\n"
 " Ten en cuenta que sera eliminada de forma permanente"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:226 ../qml/InboxTab.qml:238
-#: ../qml/NoActionableTab.qml:208
+#: ../qml/ActionableTab.qml:221 ../qml/InboxTab.qml:256
+#: ../qml/NoActionableTab.qml:207
 msgid "Convertir Thing en un no actionable?"
 msgstr ""
 
-#: ../qml/ActionableTab.qml:261 ../qml/InboxTab.qml:304
-#: ../qml/NoActionableTab.qml:243
+#: ../qml/ActionableTab.qml:256 ../qml/InboxTab.qml:323
+#: ../qml/NoActionableTab.qml:242
 msgid "Convertir Thing en un actionable?"
 msgstr ""
 
@@ -46,11 +47,11 @@ msgstr ""
 msgid "Confirmar"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:90 ../qml/AddItemPage.qml:146
+#: ../qml/AddItemPage.qml:90 ../qml/AddItemPage.qml:131
 msgid "Cancelar"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:101 ../qml/InboxTab.qml:245
+#: ../qml/AddItemPage.qml:101 ../qml/InboxTab.qml:263
 msgid "Detalles"
 msgstr ""
 
@@ -62,26 +63,46 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: ../qml/AddItemPage.qml:122
-msgid "Estado"
-msgstr ""
-
-#: ../qml/AddItemPage.qml:129
-msgid "Prioridad"
-msgstr ""
-
-#: ../qml/AddItemPage.qml:135
+#: ../qml/AddItemPage.qml:120
 msgid "Agregar"
+msgstr ""
+
+#: ../qml/ContextTab.qml:170
+msgid "Nuevo contexto"
 msgstr ""
 
 #: ../qml/HeaderComponent.qml:6 gtd.desktop.in.h:1
 msgid "Getting Things Done"
 msgstr ""
 
-#: ../qml/InboxTab.qml:251
+#: ../qml/HeaderComponent.qml:13
+msgid "Actionable"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:17
+msgid "Inbox"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:21
+msgid "No Actionable"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:25
+msgid "Contextos"
+msgstr ""
+
+#: ../qml/HeaderComponent.qml:29
+msgid "Proyectos"
+msgstr ""
+
+#: ../qml/InboxTab.qml:269
 msgid "Fecha de revisión"
 msgstr ""
 
-#: ../qml/InboxTab.qml:257
+#: ../qml/InboxTab.qml:275
 msgid "Categoría"
+msgstr ""
+
+#: ../qml/ProjectTab.qml:174
+msgid "Nuevo proyecto"
 msgstr ""

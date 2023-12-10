@@ -116,25 +116,10 @@ Page {
             height: units.gu(5)
         }
 
-        TextField {
-            id: statusInput 
-            width: parent.width - 20
-            placeholderText: i18n.tr("Estado")
-            height: units.gu(5)
-        }
-
-        TextField {
-            id: priorityInput
-            width: parent.width - 20
-            placeholderText: i18n.tr("Prioridad")
-            height: units.gu(5)
-            inputMethodHints: Qt.ImhDigitsOnly
-        }
-
         Button {
             text: i18n.tr("Agregar")
             onClicked: {
-                databaseService.addDataInbox(titleInput.text, dateInput.text, detailsInput.text, sourceInput.text, tagsInput.text, statusInput.text, priorityInput.text);
+                databaseService.addDataInbox(titleInput.text, dateInput.text, detailsInput.text, sourceInput.text, tagsInput.text);
                 if (inboxTabReference) {
                     inboxTabReference.listUpdated();
                 }

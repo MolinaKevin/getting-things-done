@@ -10,17 +10,27 @@ PageHeader {
 
         actions: [
             Action {
-                text: "Actionable"
+                text: i18n.tr("Actionable")
                 onTriggered: { stackLayout.currentIndex = 0; }
             },
             Action {
-                text: "Inbox"
+                text: i18n.tr("Inbox")
                 onTriggered: { stackLayout.currentIndex = 1; }
             },
             Action {
-                text: "No Actionable"
+                text: i18n.tr("No Actionable")
                 onTriggered: { stackLayout.currentIndex = 2; }
+            },
+            Action {
+                text: i18n.tr("Contextos")
+                onTriggered: { stackLayout.currentIndex = 3; }
+            },
+            Action {
+                text: i18n.tr("Proyectos")
+                onTriggered: { stackLayout.currentIndex = 4; }
             }
+
+
         ]
     }
 }

@@ -10,7 +10,7 @@ import Lomiri.Components.Popups 1.3
 // List
 Item {
     signal listUpdated()
-    signal noActionableTabReady(var reference)
+    signal actionableTabReady(var reference)
 
     property Item headerReference
     property var totalHeaderHeight: headerReference.height + headerReference.extension.height
@@ -41,7 +41,7 @@ Item {
     }
 
     Component.onCompleted: {
-        noActionableTabReady(this);
+        actionableTabReady(this);
     }
 
     LomiriListView {
@@ -99,15 +99,11 @@ Item {
                 }
 
                 Text {
-                    text: "Prioridad: " + model.priority
+                    text: "Contexto: " + model.contextName
                 }
 
                 Text {
-                    text: "Contexto: " + model.context
-                }
-
-                Text {
-                    text: "Proyecto: " + model.project
+                    text: "Proyecto: " + model.projectName
                 }
 
                 Text {
@@ -174,7 +170,6 @@ Item {
         Component.onCompleted: {
             var data = databaseService.loadActionable();
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].title);
                 listModel.append(data[i]);
             }
         }

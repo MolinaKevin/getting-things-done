@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.3
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3 as ListItem
 import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Pickers 1.3
 
 // List
 Item {
@@ -11,6 +12,8 @@ Item {
 
     property Item headerReference
     property var totalHeaderHeight: headerReference.height + headerReference.extension.height
+    property int selectedContextIndex: -1
+    property int selectedProjectIndex: -1
 
     function updateList() {
         var data = databaseService.loadInbox(); 
@@ -35,13 +38,36 @@ Item {
         root.itemMovedToNoActionable(id);
     }
 
-    function toActionable(id, details, dueDate, priority, status, context, project, tags) {
-        databaseService.moveItemToActionable(id, details, dueDate, priority, status, context, project, tags);
+    function toActionable(id, details, dueDate, status, context, project, tags) {
+        databaseService.moveItemToActionable(id, details, dueDate, status, context, project, tags);
         root.itemMovedToThings(id);
     }
 
+
     Component.onCompleted: {
         inboxTabReady(this);
+        var contexts = databaseService.loadContexts();
+        if (contexts.length > 0) {
+            contexts.forEach(function(context) {
+                contextModel.append(context);
+            });
+        }
+
+        var projects = databaseService.loadProjects();
+        console.log("Que pasa: " + JSON.stringify(projects));
+        if (projects.length > 0) {
+            projects.forEach(function(project) {
+                projectModel.append(project);
+            });
+        }
+    }
+
+    ListModel {
+        id: contextModel
+    }
+
+    ListModel {
+        id: projectModel
     }
 
     LomiriListView {
@@ -60,10 +86,6 @@ Item {
 
         model: ListModel {
             id: listModel
-            //ListElement {
-            //    title: "Some Name"
-            //    creationDate: "Some Date"
-            //}
         }
 
         delegate: ListItemWithLabel {
@@ -90,15 +112,11 @@ Item {
                 }
 
                 Text {
-                    text: "Estado: " + model.status
+                    text: "Tags: " + model.tags
                 }
 
                 Text {
-                    text: "Tags: " + model.tags
-                }
-                
-                Text {
-                    text: "Prioridad: " + model.priority
+                    text: "Fuente: " + model.source
                 }
             }
 
@@ -182,7 +200,7 @@ Item {
             //listInbox.anchors.top = header.bottom
             var data = databaseService.loadInbox();
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].name);
+                //console.log(data[i].name);
                 listModel.append(data[i]);
             }
         }
@@ -286,6 +304,8 @@ Item {
             }
         }
     }
+
+
     Component {
         id: actionableDialogComponent
         ConfirmDialog {
@@ -294,7 +314,6 @@ Item {
             property string details: ""
             property int itemIndex: -1
             property string dueDate
-            property int priority
             property string status
             property string context
             property string project
@@ -309,6 +328,7 @@ Item {
 
                 TextField {
                     id: detailsField 
+                    width: parent.width
                     placeholderText: qsTr("Detalles")
                     text: currentItem.details 
                     onTextChanged: details = text
@@ -316,37 +336,74 @@ Item {
 
                 TextField {
                     id: dueDateField
+                    width: parent.width
                     placeholderText: qsTr("Due Date")
                     onTextChanged: dueDate = text
                 }
 
                 TextField {
-                    id: priorityField
-                    text: currentItem.priority
-                    onTextChanged: priority = text 
-                }
-
-                TextField {
                     id: statusField
-                    text: currentItem.status
+                    width: parent.width
                     placeholderText: qsTr("Status")
                     onTextChanged: status = text
                 }
 
-                TextField {
-                    id: contextField
-                    placeholderText: qsTr("Context")
-                    onTextChanged: context = text
-                }
+                Picker {
+                    id: contextComboBox
+                    width: parent.width
+                    model: contextModel
+                    anchors.left: parent.left
+                    height: units.gu(10)
 
-                TextField {
-                    id: projectField
-                    placeholderText: qsTr("Project")
-                    onTextChanged: project = text
+                    delegate: PickerDelegate {
+                        width: parent.width
+                        anchors.left: parent.left
+                        anchors.margins: 30
+                        Label {
+                            text: model.name  
+                        }
+                    }
+
+                    onSelectedIndexChanged: {
+                        selectedContextIndex = contextComboBox.selectedIndex;
+                    }
+
+                    Component.onCompleted: {
+                        model = contextModel;
+                        selectedIndex = 1;
+                    }
+                    
+                }
+                
+                Picker {
+                    id: projectComboBox
+                    width: parent.width
+                    model: projectModel
+                    anchors.left: parent.left
+                    height: units.gu(10)
+
+                    delegate: PickerDelegate {
+                        width: parent.width
+                        anchors.left: parent.left
+                        anchors.margins: 30
+                        Label {
+                            text: model.name  
+                        }
+                    }
+                    onSelectedIndexChanged: {
+                        selectedProjectIndex = projectComboBox.selectedIndex;
+                    }
+
+                    Component.onCompleted: {
+                        model = projectModel;
+                        selectedIndex = 1;
+                    }
+                    
                 }
 
                 TextField {
                     id: tagsField
+                    width: parent.width
                     text: currentItem.tags
                     placeholderText: qsTr("Tags")
                     onTextChanged: tags = text
@@ -369,9 +426,12 @@ Item {
                     color: LomiriColors.green
                     onClicked: {
                         if (itemIndex >= 0) {
-                            console.log("Eliminar elemento con índice: " + itemIndex);
+                            console.log("Creando accionable con elemento: " + itemIndex);
+                            var context = contextModel.get(selectedContextIndex).id;
+                            var project = projectModel.get(selectedProjectIndex).id;
+
                             var id = listModel.get(itemIndex).id;
-                            toActionable(id, details, dueDate, priority, status, context, project, tags);
+                            toActionable(id, details, dueDate, status, context, project, tags);
                             removeFromListModel(itemIndex);
                         }
                         PopupUtils.close(confirmDialog)
